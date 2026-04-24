@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="blueCat" class="animal_by_xml.Cat" scope="prototype">
+        <constructor-arg name="age" value="2"/>
+        <constructor-arg name="color" value="蓝"/>
+    </bean>
+
+    <bean id="yellowCat" class="animal_by_xml.Cat" scope="prototype">
+        <constructor-arg name="age" value="3"/>
+        <constructor-arg name="color" value="黄"/>
+    </bean>
+
+    <bean id="blackDog" class="animal_by_xml.Dog">
+        <property name="age" value="3"/>
+        <property name="color" value="黑"/>
+    </bean>
+
+    <bean id="yellowDog" class="animal_by_xml.Dog">
+        <property name="age" value="1"/>
+        <property name="color" value="黄"/>
+    </bean>
+
+    <bean id="jaeger" class="animal_by_xml.Person">
+        <property name="name" value="Eren Jaeger"/>
+        <property name="dog" ref="blackDog"/>
+        <property name="cats">
+            <list>
+                <ref bean="blueCat"/>
+                <ref bean="yellowCat"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
