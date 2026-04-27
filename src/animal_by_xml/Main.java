@@ -3,8 +3,6 @@ package animal_by_xml;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import javax.smartcardio.Card;
-
 public class Main {
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("animal_by_xml/applicationContext.xml");

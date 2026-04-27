@@ -35,4 +35,14 @@
         </property>
     </bean>
 
+    <bean id="logger" class="animal_by_xml.Logger"/>
+
+    <aop:config proxy-target-class="true">
+        <aop:aspect ref="logger">
+            <aop:pointcut id="sayPoint" expression="execution(* animal_by_xml.*.say*(..))"/>
+            <aop:before method="beforeSay" pointcut-ref="sayPoint"/>
+            <aop:after method="afterSay" pointcut-ref="sayPoint"/>
+        </aop:aspect>
+    </aop:config>
+
 </beans>
